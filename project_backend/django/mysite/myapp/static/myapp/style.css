@@ -1,0 +1,39 @@
+
+
+body{
+    margin: 0;
+    padding-top: 90px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: rgb(250, 250, 250);
+
+}
+
+.banner{
+    background-color: darkgoldenrod;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 50;
+    
+}
+
+.banner-text{
+    color:white;
+    z-index: 100;
+    position: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.shadow, .card{
+    z-index: 0;
+}
+
+
+
+
+

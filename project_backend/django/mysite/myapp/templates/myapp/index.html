@@ -1,0 +1,70 @@
+{% extends "myapp/base.html" %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text">
+                    <h1>Inter-Departmental Schedule</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Add an Activity</h4>
+
+            <form class='p-3 shadow' method='POST'>
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name='name' placeholder="Enter task">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="priority", name='priority' placeholder="Set task priority">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="date", name="date">
+                </div>
+                <br>
+                    <input class='btn btn-success' type='submit'>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Business Schedule</h4>
+            
+            {% for task in task_list %}
+            <div class="shadow card">
+                <div class="card-body">
+                    <h5 class="card-title">Activity: {{task.name}}</h5>
+                    <p><b>Priority No.: {{task.priority}}</b></p>
+                    <p><b>Set date: {{task.date}}</b></p>
+
+                    <a class="btn btn-danger" href="{% url 'delete' task.id %}">Done</a>
+                    <a class="btn btn-success" href="{% url 'update' task.id %}">Update</a>
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock  %}
+
+   
+
+
+
+
