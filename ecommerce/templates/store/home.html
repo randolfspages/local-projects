@@ -1,0 +1,58 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+{% block content %}
+  
+    <main>
+
+        <section class="py-2 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h3 class="h3 fw-bold">Search, Read, Buy, Review</h3>
+                    <p class="lead text muted ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id natus, illum expedita ipsam aspernatur 
+                        tenetur atque eveniet quod. Repellat optio incidunt neque, quis sint nulla natus? Quidem, totam repellat?
+                    </p>
+                    
+                    <p>
+                        <a href="#" class="btn btn-primary my-2">Make an account</a>
+                    </p>
+                    
+                </div>
+            </div>
+        </section>
+    
+        
+        <div class="album py-5 bg-light">
+            <div class="container">
+        
+              <div class="pb-3 h5">All Books</div>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+        
+                {% for product in products %}
+        
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="img-fluid" alt="Responsive image" src="{{ products.image.url }}">
+                    <div class="card-body">
+                      <p class="card-text">
+                        <a class="text-dark text-decoration-none" href="{{ products.get_absolute_url }}">{{ product.title }}</a>
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">9min read</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                {% endfor %}
+        
+              </div>
+            </div>
+          </div>
+
+    </main>
+
+{% endblock %}
