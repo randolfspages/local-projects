@@ -1,6 +1,4 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 
@@ -37,8 +35,8 @@ function App() {
 
   return (
     <>
-      <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500'>
-          <h1 className='text-white text-center my-3'>
+      <div className='w-full max-w-md mx-auto my-[25%] shadow-md rounded-lg px-4  bg-gray-800 text-orange-500'>
+          <h1 className='text-white text-4xl font-bold text-center my-3'>
               Password Generator
           </h1>
           <div className='flex shadwo rounded-lg overflow-hidden mb-4'>
